@@ -1,0 +1,16 @@
+<mat-dialog-content>
+    <table>
+        <tr>
+            <th>Jug X</th>
+            <th>Jug Y</th>
+            <th>Step</th>
+        </tr>
+        @for (c of data.steps; track $index) {
+            <tr>
+                <td>{{c[0]}}</td>
+                <td>{{c[1]}}</td>
+                <td>{{explanation(c[0], c[1], $index)}}</td>
+            </tr>
+        }
+    </table>
+</mat-dialog-content>

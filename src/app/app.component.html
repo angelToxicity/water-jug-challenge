@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header class="d-flex justify-content-center my-2">
+        <mat-card-title >Water Jug Challenge</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="my-4">
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="d-flex justify-content-between">
+            <mat-form-field class="d-flex">
+              <mat-label>Gallon X</mat-label>
+              <input matInput appearance="outline" formControlName="x" onlyNumber>
+              @if (x?.hasError('required') || x?.hasError('min')) {
+                <mat-error>Please enter a valid x gallon capacity</mat-error>
+              }
+            </mat-form-field>
+            <mat-form-field class="d-flex">
+              <mat-label>Gallon Y</mat-label>
+              <input matInput appearance="outline" formControlName="y" onlyNumber>
+              @if (y?.hasError('required') || y?.hasError('min')) {
+                <mat-error>Please enter a valid y gallon capacity</mat-error>
+              }
+            </mat-form-field>
+            <mat-form-field class="d-flex">
+              <mat-label>Gallon Z (measure
+                )</mat-label>
+              <input matInput appearance="outline" formControlName="z" onlyNumber>
+              @if (z?.hasError('required') || z?.hasError('min')) {
+                <mat-error>Please enter a valid z gallon capacity</mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <button mat-button>Calculate</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>
